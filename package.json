@@ -4,6 +4,7 @@
   "dependencies": {
     "express" : "~4.14.0",
     "fs" : "~0.1.7",
-    "underscore" : "~1.8.3"
+    "underscore" : "~1.8.3",
+    "camelcase" : "~3.0.0"
   }
 }
