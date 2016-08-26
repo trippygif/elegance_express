@@ -7,16 +7,22 @@ var fs = require("fs");
 
 function Elegance() {
 
+
+    /*
+    create an array of module folders. in this instance we used
+    the folders 'modules' and 'objects'.
+     */
+
     this.initModules = function(arrayModules){
         var _ = require("underscore");
 
         _.each(arrayModules, function(moduleDir){
-            //console.log(moduleDir);
+
             var fileNames = fs.readdirSync("./"+moduleDir);
 
-            console.log(fileNames);
+
             _.each(fileNames, function(fileName){
-                console.log(moduleDir);
+                fileName = fileName.replace(/.js/,'');
                 eval("GLOBAL."+fileName+" = require('./" +moduleDir+"/"+fileName+"');");
             })
         })
@@ -30,5 +36,7 @@ function Elegance() {
 
     };
 }
+
+
 
 
